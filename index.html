@@ -34,7 +34,22 @@
   --sans: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-padding-top: 76px;
+}
+@media (max-width: 860px) {
+  html {
+    scroll-padding-top: 115px;
+  }
+}
+.page, section[id] {
+  scroll-margin-top: 76px;
+}
+@media (max-width: 860px) {
+  .page, section[id] {
+    scroll-margin-top: 115px;
+  }
+}
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 img, svg { max-width: 100%; display: block; }
 img { height: auto; }
@@ -284,15 +299,15 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#/" aria-label="Dapur Shika, ke beranda">
+    <a class="brand" href="#beranda" aria-label="Dapur Shika, ke beranda">
       <span class="brand-mark" aria-hidden="true">D</span>
       Dapur Shika
     </a>
     <nav class="main" aria-label="Menu utama" id="nav">
-      <a href="#/" data-page="beranda">Beranda</a>
-      <a href="#/tentang" data-page="tentang">Tentang Kami</a>
-      <a href="#/menu" data-page="menu">Menu &amp; Pricelist</a>
-      <a href="#/kontak" data-page="kontak">Kontak &amp; Cara Pesan</a>
+      <a href="#beranda" data-page="beranda">Beranda</a>
+      <a href="#tentang" data-page="tentang">Tentang Kami</a>
+      <a href="#menu" data-page="menu">Menu &amp; Pricelist</a>
+      <a href="#kontak" data-page="kontak">Kontak &amp; Cara Pesan</a>
       <a class="nav-cta" href="https://wa.me/6282242997267?text=Halo%20Dapur%20Shika%2C%20saya%20mau%20pesan%20..." target="_blank" rel="noopener">Pesan via WhatsApp</a>
     </nav>
   </div>
@@ -301,7 +316,7 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
 <main>
 
 <!-- ===================== BERANDA ===================== -->
-<div class="page" id="page-beranda">
+<section class="page" id="beranda" data-page="beranda">
   <section class="hero">
     <div class="wrap">
       <div>
@@ -309,7 +324,7 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
         <p class="lead">Salad buah, klapertart, brownies, snack box, kue hantaran, sampai kue kering. Pas untuk acara keluarga, arisan, atau camilan hari ini.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://wa.me/6282242997267?text=Halo%20Dapur%20Shika%2C%20saya%20mau%20pesan%20..." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Pesan lewat WhatsApp</a>
-          <a class="btn btn-light" href="#/menu">Lihat menu</a>
+          <a class="btn btn-light" href="#menu">Lihat menu</a>
         </div>
         <div class="badges">
           <span class="badge">Halal</span>
@@ -331,19 +346,19 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
         <p>Ketuk salah satu untuk melihat daftar produk dan harganya.</p>
       </div>
       <div class="menu-grid">
-        <a class="menu-card" href="#/menu/salad">
+        <a class="menu-card" href="#menu/salad" data-cat="salad">
           <div class="ph"><img data-img="cups" alt="Cup salad buah dan klapertart" width="560" height="260"></div>
           <div class="body"><h3>Salad Buah &amp; Klapertart</h3><p>Dingin, segar, dan manis pas untuk suguhan tamu.</p></div>
         </a>
-        <a class="menu-card" href="#/menu/brownies">
+        <a class="menu-card" href="#menu/brownies" data-cat="brownies">
           <div class="ph"><img data-img="cake" alt="Bolu coklat cetak ring" width="464" height="324"></div>
           <div class="body"><h3>Brownies &amp; Bolu</h3><p>Brownies cup, coklat lumer, dan bolu lembut.</p></div>
         </a>
-        <a class="menu-card" href="#/menu/snack">
+        <a class="menu-card" href="#menu/snack" data-cat="snack">
           <div class="ph"><img data-img="pastry" alt="Kue dalam kemasan hantaran dengan alas kertas renda" width="462" height="564" style="object-position:center 30%"></div>
           <div class="body"><h3>Snack Box &amp; Kue Hantaran</h3><p>Paket siap antar untuk pengajian, rapat, dan syukuran.</p></div>
         </a>
-        <a class="menu-card" href="#/menu/kering">
+        <a class="menu-card" href="#menu/kering" data-cat="kering">
           <div class="ph"><img data-img="jars" alt="Kue kering dalam toples berlabel Dapur Shika" width="464" height="450"></div>
           <div class="body"><h3>Aneka Kue Kering</h3><p>Kastengel, nastar, cookies kacang, dan lainnya dalam toples.</p></div>
         </a>
@@ -357,7 +372,7 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
       <div>
         <h2>Temui kami di Alun-Alun Sukoharjo</h2>
         <p>Lapak Dapur Shika ada di CFD Alun-Alun Satya Negara. Datang, pilih langsung, dan bawa pulang dessert favorit Anda. Workshop kami ada di Combongan, Sukoharjo.</p>
-        <a class="btn btn-primary" href="#/kontak">Lihat lokasi &amp; cara pesan</a>
+        <a class="btn btn-primary" href="#kontak">Lihat lokasi &amp; cara pesan</a>
       </div>
     </div>
   </section>
@@ -384,10 +399,10 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
       </div>
     </div>
   </section>
-</div>
+</section>
 
 <!-- ===================== TENTANG ===================== -->
-<div class="page" id="page-tentang" hidden>
+<section class="page" id="tentang" data-page="tentang">
   <section class="intro">
     <div class="wrap">
       <div>
@@ -443,14 +458,14 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
     <div class="wrap">
       <div class="cta-inner">
         <div><h2>Mau coba dessert kami?</h2><p>Lihat menu lengkap atau langsung chat untuk memesan.</p></div>
-        <a class="btn" href="#/menu">Lihat menu</a>
+        <a class="btn" href="#menu">Lihat menu</a>
       </div>
     </div>
   </section>
-</div>
+</section>
 
 <!-- ===================== MENU ===================== -->
-<div class="page" id="page-menu" hidden>
+<section class="page" id="menu" data-page="menu">
   <section class="page-title">
     <div class="wrap">
       <h1>Menu &amp; Pricelist</h1>
@@ -458,7 +473,7 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
     </div>
   </section>
   <div class="tabs-bar"><div class="wrap"><div class="tabs" role="tablist" aria-label="Kategori menu" id="tabs"></div></div></div>
-  <div class="wrap" id="menu"></div>
+  <div class="wrap" id="menu-items"></div>
   <div class="wrap"><div class="note">Harga bertanda "harga contoh" akan diganti dengan harga asli. Harga kue kering sesuai poster Dapur Shika.</div></div>
   <section class="bulk">
     <div class="wrap">
@@ -468,10 +483,10 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
       </div>
     </div>
   </section>
-</div>
+</section>
 
 <!-- ===================== KONTAK ===================== -->
-<div class="page" id="page-kontak" hidden>
+<section class="page" id="kontak" data-page="kontak">
   <section class="page-title">
     <div class="wrap">
       <h1>Kontak &amp; Cara Pesan</h1>
@@ -506,7 +521,7 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
     <div class="wrap">
       <div class="sec-head"><h2>Cara memesan</h2><p>Empat langkah dari memilih menu sampai pesanan Anda diterima.</p></div>
       <ol class="steps">
-        <li><h3>Pilih menu</h3><p>Lihat halaman Menu &amp; Pricelist, lalu tentukan produk dan jumlahnya.</p></li>
+        <li><h3>Pilih menu</h3><p>Lihat daftar di bagian <a href="#menu" style="font-weight:800;color:var(--straw);text-decoration:underline;">Menu &amp; Pricelist</a>, lalu tentukan produk dan jumlahnya.</p></li>
         <li><h3>Kirim pesan</h3><p>Isi formulir di bawah atau chat langsung. Sebutkan menu, jumlah, dan tanggal.</p></li>
         <li><h3>Konfirmasi</h3><p>Kami memastikan ketersediaan, total harga, dan cara pembayaran.</p></li>
         <li><h3>Ambil atau antar</h3><p>Pesanan disiapkan sesuai jadwal dan diambil atau diantar sesuai kesepakatan.</p></li>
@@ -574,7 +589,7 @@ footer.site a { text-decoration: underline; text-underline-offset: 3px; }
       </div>
     </div>
   </section>
-</div>
+</section>
 
 </main>
 
@@ -646,7 +661,7 @@ function setImages(root) {
 
 /* Menu */
 var tabsEl = document.getElementById("tabs");
-var menuEl = document.getElementById("menu");
+var menuEl = document.getElementById("menu-items") || document.getElementById("menu");
 
 function renderMenu() {
   menuEl.innerHTML = CATEGORIES.map(function (c) {
@@ -681,27 +696,197 @@ function selectTab(id) {
 
 tabsEl.addEventListener("click", function (e) {
   var b = e.target.closest(".tab");
-  if (b) { var id = b.getAttribute("data-id"); location.hash = id === "all" ? "#/menu" : "#/menu/" + id; }
+  if (b) {
+    var id = b.getAttribute("data-id");
+    selectTab(id);
+    if (history.replaceState) {
+      history.replaceState(null, "", id === "all" ? "#menu" : "#menu/" + id);
+    }
+    // Jika posisi tabs bar terlewat di atas viewport, scroll halus ke tabs bar
+    var bar = document.querySelector(".tabs-bar");
+    if (bar) {
+      var barRect = bar.getBoundingClientRect();
+      var headerH = getHeaderOffset();
+      if (barRect.top < headerH) {
+        smoothScrollTo(window.pageYOffset + barRect.top - headerH - 8);
+      }
+    }
+  }
 });
 
-/* Router sederhana: #/  #/tentang  #/menu[/kategori]  #/kontak */
-var TITLES = { beranda: "Dapur Shika | Dessert, Kue & Snack Box Sukoharjo", tentang: "Tentang Kami | Dapur Shika", menu: "Menu & Pricelist | Dapur Shika", kontak: "Kontak & Cara Pesan | Dapur Shika" };
-var lastPage = null;
-function route() {
-  var parts = location.hash.replace(/^#\/?/, "").split("/");
-  var page = parts[0] || "beranda";
-  if (!TITLES[page]) page = "beranda";
-  Array.prototype.forEach.call(document.querySelectorAll(".page"), function (p) { p.hidden = p.id !== "page-" + page; });
-  Array.prototype.forEach.call(document.querySelectorAll("#nav a[data-page]"), function (a) {
-    if (a.getAttribute("data-page") === page) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
-  });
-  document.title = TITLES[page];
-  if (page === "menu") selectTab(parts[1] || "all");
-  if (page !== lastPage) window.scrollTo(0, 0);
-  else if (page === "menu") { var bar = document.querySelector(".tabs-bar"); window.scrollTo(0, Math.max(0, bar.offsetTop - 70)); }
-  lastPage = page;
+/* Navigasi Smooth Scroll & ScrollSpy */
+var TITLES = {
+  beranda: "Dapur Shika | Dessert, Kue & Snack Box Sukoharjo",
+  tentang: "Tentang Kami | Dapur Shika",
+  menu: "Menu & Pricelist | Dapur Shika",
+  kontak: "Kontak & Cara Pesan | Dapur Shika"
+};
+
+function getHeaderOffset() {
+  var header = document.querySelector("header.site");
+  return header ? header.offsetHeight : 70;
 }
-window.addEventListener("hashchange", route);
+
+var scrollAnimationId = null;
+
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+function cancelScrollAnimation() {
+  if (scrollAnimationId) {
+    cancelAnimationFrame(scrollAnimationId);
+    scrollAnimationId = null;
+  }
+}
+
+window.addEventListener("wheel", cancelScrollAnimation, { passive: true });
+window.addEventListener("touchstart", cancelScrollAnimation, { passive: true });
+
+function smoothScrollTo(target, targetHash) {
+  cancelScrollAnimation();
+
+  var targetY = 0;
+  if (typeof target === "number") {
+    targetY = target;
+  } else {
+    var el = typeof target === "string" ? document.querySelector(target) : target;
+    if (!el && target === 0) {
+      targetY = 0;
+    } else if (el) {
+      var headerOffset = getHeaderOffset();
+      targetY = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - headerOffset);
+    } else {
+      return;
+    }
+  }
+
+  var startY = window.pageYOffset || document.documentElement.scrollTop;
+  var distance = targetY - startY;
+
+  if (Math.abs(distance) < 4) {
+    window.scrollTo(0, targetY);
+    if (targetHash && history.pushState) history.pushState(null, "", targetHash);
+    return;
+  }
+
+  // Durasi transisi halus (600ms - 950ms) disesuaikan secara proporsional dengan jarak
+  var duration = Math.min(950, Math.max(600, Math.sqrt(Math.abs(distance)) * 15));
+  var startTime = null;
+
+  function step(currentTime) {
+    if (!startTime) startTime = currentTime;
+    var elapsed = currentTime - startTime;
+    var progress = Math.min(elapsed / duration, 1);
+    var ease = easeInOutCubic(progress);
+
+    window.scrollTo(0, Math.round(startY + distance * ease));
+
+    if (progress < 1) {
+      scrollAnimationId = requestAnimationFrame(step);
+    } else {
+      scrollAnimationId = null;
+      window.scrollTo(0, targetY);
+      if (targetHash && history.pushState) {
+        history.pushState(null, "", targetHash);
+      }
+    }
+  }
+
+  scrollAnimationId = requestAnimationFrame(step);
+}
+
+function updateActiveNav(pageId) {
+  var navLinks = document.querySelectorAll("#nav a[data-page]");
+  Array.prototype.forEach.call(navLinks, function (a) {
+    if (a.getAttribute("data-page") === pageId) {
+      a.setAttribute("aria-current", "page");
+    } else {
+      a.removeAttribute("aria-current");
+    }
+  });
+}
+
+function handleNavigation(hash) {
+  if (!hash || hash === "#" || hash === "#/" || hash === "#beranda") {
+    smoothScrollTo(document.getElementById("beranda") || 0, "#beranda");
+    updateActiveNav("beranda");
+    document.title = TITLES.beranda;
+    return;
+  }
+
+  var clean = hash.replace(/^#\/?/, "");
+  var parts = clean.split("/");
+  var page = parts[0] || "beranda";
+  var sub = parts[1] || null;
+
+  page = page.replace(/^page-/, "");
+
+  if (page === "menu" && sub) {
+    selectTab(sub);
+  }
+
+  var targetEl = document.getElementById(page) || document.getElementById("page-" + page);
+  if (targetEl) {
+    smoothScrollTo(targetEl, hash);
+    updateActiveNav(page);
+    if (TITLES[page]) document.title = TITLES[page];
+  }
+}
+
+/* Event delegation untuk klik semua link internal (href^="#") */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest("a");
+  if (!a) return;
+  var href = a.getAttribute("href");
+  if (href && href.startsWith("#")) {
+    e.preventDefault();
+    var cat = a.getAttribute("data-cat");
+    if (cat) {
+      selectTab(cat);
+      handleNavigation("#menu/" + cat);
+    } else {
+      handleNavigation(href);
+    }
+  }
+});
+
+/* ScrollSpy untuk mengupdate navbar secara otomatis saat user melakukan scroll */
+var sectionKeys = ["beranda", "tentang", "menu", "kontak"];
+var isAutoScrolling = false;
+
+function onScrollSpy() {
+  var headerOffset = getHeaderOffset() + 80;
+  var currentSection = "beranda";
+
+  for (var i = 0; i < sectionKeys.length; i++) {
+    var secId = sectionKeys[i];
+    var el = document.getElementById(secId);
+    if (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top <= headerOffset) {
+        currentSection = secId;
+      }
+    }
+  }
+
+  // Jika sudah scroll sampai paling bawah, aktifkan bagian kontak
+  if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 60) {
+    currentSection = "kontak";
+  }
+
+  updateActiveNav(currentSection);
+  if (TITLES[currentSection] && document.title !== TITLES[currentSection]) {
+    document.title = TITLES[currentSection];
+  }
+}
+
+window.addEventListener("scroll", onScrollSpy, { passive: true });
+window.addEventListener("hashchange", function () {
+  if (location.hash) {
+    handleNavigation(location.hash);
+  }
+});
 
 /* Formulir pesanan */
 var form = document.getElementById("orderForm");
@@ -733,7 +918,15 @@ form.addEventListener("submit", function (e) {
 renderMenu();
 renderTabs();
 setImages(document);
-route();
+
+// Handle initial load hash jika ada
+if (location.hash) {
+  setTimeout(function () {
+    handleNavigation(location.hash);
+  }, 80);
+} else {
+  onScrollSpy();
+}
 </script>
 </body>
 </html>
